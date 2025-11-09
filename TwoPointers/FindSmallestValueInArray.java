@@ -1,3 +1,4 @@
+package TwoPointers;
 public class FindSmallestValueInArray {
 
     public static void main(String[] args) {
