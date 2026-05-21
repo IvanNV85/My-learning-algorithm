@@ -2,7 +2,7 @@ package TwoPointers;
 
 import java.util.Scanner;
 
-public class bai {
+public class testDsaInterview {
     public static void main(String[] args) {
         System.out.println("Nhap n: ");
         Scanner scan = new Scanner(System.in);
