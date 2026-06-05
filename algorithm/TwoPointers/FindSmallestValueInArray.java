@@ -1,4 +1,4 @@
-package TwoPointers;
+package algorithm.TwoPointers;
 public class FindSmallestValueInArray {
 
     public static void main(String[] args) {

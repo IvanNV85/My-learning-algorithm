@@ -1,4 +1,4 @@
-package String;
+package algorithm.String;
 import java.util.Arrays;
 
 public class ValidAnagram {

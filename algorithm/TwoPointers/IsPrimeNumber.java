@@ -1,4 +1,4 @@
-package TwoPointers;
+package algorithm.TwoPointers;
 public class IsPrimeNumber {
     public static void main(String[] args) {
         int a = 1;

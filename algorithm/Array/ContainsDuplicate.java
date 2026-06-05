@@ -1,4 +1,4 @@
-package Array;
+package algorithm.Array;
 import java.util.Arrays;
 
 public class ContainsDuplicate {
