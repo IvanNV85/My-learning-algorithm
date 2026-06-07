@@ -15,9 +15,9 @@ public class main {
         myLinkedList.printList();
 
         //after remove
-        System.out.println(myLinkedList.removeLast());
-        System.out.println(myLinkedList.removeLast());
-        System.out.println(myLinkedList.removeLast());
+        System.out.println(myLinkedList.removeLast().value);
+        System.out.println(myLinkedList.removeLast().value);
+        System.out.println(myLinkedList.removeLast().value);
 
     }
 }
