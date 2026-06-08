@@ -24,7 +24,7 @@ public class LinkedList {
     public void printList() {
         Node temp = head;
         while (temp != null) {
-            System.out.println(" " + temp.value + " ->");
+            System.out.print(" " + temp.value + " ->");
             temp = temp.next;
         }
     }
@@ -102,6 +102,15 @@ public class LinkedList {
             temp = temp.next;
         }
         return temp;
+    }
+
+    public boolean set(int index, int value){
+        Node temp = get(index);
+        if (temp != null){
+            temp.value = value;
+            return true;
+        }
+        return false;
     }
 
 }
