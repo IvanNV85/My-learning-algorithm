@@ -1,23 +1,32 @@
 package algorithm.myLinkedList;
 
+import java.util.Scanner;
+
 public class main {
     public static void main(String[] args) {
+        LinkedList myLinkedList = new LinkedList(11);
 
-        LinkedList myLinkedList = new LinkedList(4);
-
-        //before remove
-        myLinkedList.append(11);
+        //before removes
+        myLinkedList.append(22);
+        myLinkedList.append(23);
+        myLinkedList.append(55);
+//        myLinkedList.prepend(3);
+//        myLinkedList.removeFirst();
+//        myLinkedList.set(3, 55);
 
         myLinkedList.getHead();
         myLinkedList.getTail();
         myLinkedList.getLength();
 
+        System.out.print("List before remove: ");
         myLinkedList.printList();
 
-        //after remove
-        System.out.println(myLinkedList.removeLast().value);
-        System.out.println(myLinkedList.removeLast().value);
-        System.out.println(myLinkedList.removeLast().value);
+        myLinkedList.remove(2);
+        System.out.print("\n"+ "List after remove: ");
+        myLinkedList.printList();
+
+
+//        System.out.println("\n The number you find is: " + myLinkedList.get(1).value);
 
     }
 }
