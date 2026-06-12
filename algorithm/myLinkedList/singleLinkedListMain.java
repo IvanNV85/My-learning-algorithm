@@ -1,8 +1,6 @@
 package algorithm.myLinkedList;
 
-import java.util.Scanner;
-
-public class main {
+public class singleLinkedListMain {
     public static void main(String[] args) {
         LinkedList myLinkedList = new LinkedList(11);
 
