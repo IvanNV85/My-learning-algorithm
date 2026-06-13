@@ -1,6 +1,6 @@
 package algorithm.myLinkedList;
 
-public class singleLinkedListMain {
+public class SingleLinkedListMain {
     public static void main(String[] args) {
         LinkedList myLinkedList = new LinkedList(11);
 

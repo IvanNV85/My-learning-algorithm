@@ -27,7 +27,7 @@ public class DoubleLinkedList {
     public void printList() {
         Node temp = head;
         while (temp != null) {
-            System.out.print(" " + temp.value + " ->");
+            System.out.print(" " + temp.value + " <->");
             temp = temp.next;
         }
     }
