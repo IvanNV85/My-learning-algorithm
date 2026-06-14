@@ -1,0 +1,12 @@
+# Java compiler output
+*.class
+out/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+
