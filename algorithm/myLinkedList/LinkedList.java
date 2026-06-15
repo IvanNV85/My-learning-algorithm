@@ -149,9 +149,9 @@ public class LinkedList {
         tail = temp;
         Node after = temp.next;
         Node before = null;
-        for (int i = 0; i < length; i++) {
+        for(int i = 0; i < length; i++){
             after = temp.next;
-            temp.next = before;
+            temp.next = before; //đổi chiều của mũi tên trở từ node trước
             before = temp;
             temp = after;
         }
