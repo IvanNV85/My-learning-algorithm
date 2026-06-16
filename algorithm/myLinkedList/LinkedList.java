@@ -180,5 +180,14 @@ public class LinkedList {
         return false;
     }
 
-
+    public void createCycle(int index) {
+        if (index < 0 || index >= length || head == null) {
+            return;
+        }
+        // Lấy node ở vị trí index
+        Node cycleNode = get(index);
+        // Nối tail trỏ tới node đó
+        tail.next = cycleNode;
+        System.out.println("\n" + "✓ Cycle created at index " + index);
+    }
 }
