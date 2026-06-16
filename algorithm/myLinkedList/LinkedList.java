@@ -190,4 +190,20 @@ public class LinkedList {
         tail.next = cycleNode;
         System.out.println("\n" + "✓ Cycle created at index " + index);
     }
+
+    public Node findKFromEnd(int value){
+        Node slow = head;
+        Node fast = head;
+        for (int i = 0; i < value; i++) {
+            if (fast == null) return null;
+            fast = fast.next;
+        }
+        while (fast != null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
+
+
 }
