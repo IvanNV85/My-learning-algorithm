@@ -8,7 +8,6 @@ public class SingleLinkedListMain {
         myLinkedList.append(2);
         myLinkedList.append(3);
         myLinkedList.append(4);
-        myLinkedList.append(5);
 //        myLinkedList.prepend(3);
 //        myLinkedList.removeFirst();
 //        myLinkedList.set(3, 55);
@@ -30,8 +29,12 @@ public class SingleLinkedListMain {
 //
 //        System.out.println("\n The number you find is: " + myLinkedList.get(1).value);
 
-        System.out.print("\n"+ "The number in the middle is: " + myLinkedList.findMiddleNode().value);
+        System.out.print("\n" + "The number in the middle is: " + myLinkedList.findMiddleNode().value);
 
+        System.out.print("\n" + "Has loop?: " + myLinkedList.hasLoop());
+
+//        myLinkedList.createCycle(2);
+//        System.out.print("\n" + "Has loop?: " + myLinkedList.hasLoop());
 
     }
 }

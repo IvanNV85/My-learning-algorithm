@@ -143,13 +143,13 @@ public class LinkedList {
         return temp;
     }
 
-    public void reverse(){
+    public void reverse() {
         Node temp = head;
         head = tail;
         tail = temp;
         Node after = temp.next;
         Node before = null;
-        for(int i = 0; i < length; i++){
+        for (int i = 0; i < length; i++) {
             after = temp.next;
             temp.next = before; //đổi chiều của mũi tên trở từ node trước
             before = temp;
@@ -157,25 +157,24 @@ public class LinkedList {
         }
     }
 
-    public Node findMiddleNode(){
+    public Node findMiddleNode() {
         Node slow = head;
         Node fast = head;
-        while (fast != null && fast.next != null){
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
         return slow;
     }
 
-    public boolean hasLoop(){
+    public boolean hasLoop() {
         Node slow = head;
         Node fast = head;
-        while(fast != null && fast.next != null){
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-            if (slow == fast){
-                return true;
-            }
+
+            if (slow == fast) return true;
         }
         return false;
     }
