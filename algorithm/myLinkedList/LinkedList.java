@@ -1,5 +1,8 @@
 package algorithm.myLinkedList;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedList {
     private Node head;
     private Node tail;
@@ -190,26 +193,26 @@ public class LinkedList {
         System.out.println("\n" + "✓ Cycle created at index " + index);
     }
 
-    public Node findKFromEnd(int value){
+    public Node findKFromEnd(int value) {
         Node slow = head;
         Node fast = head;
         for (int i = 0; i < value; i++) {
             if (fast == null) return null;
             fast = fast.next;
         }
-        while (fast != null){
+        while (fast != null) {
             slow = slow.next;
             fast = fast.next;
         }
         return slow;
     }
 
-    public void removeDuplicate(){
+    public void removeDuplicate() {
         Node current = head;
-        while (current != null){
+        while (current != null) {
             Node runner = current;
             while (runner.next != null) {
-                if (runner.next.value == current.value){
+                if (runner.next.value == current.value) {
                     runner.next = runner.next.next;
                     length--;
                 } else {
@@ -220,5 +223,20 @@ public class LinkedList {
         }
     }
 
+    public void removeDuplicateWithHashSet() {
+        Set<Integer> seen = new HashSet<>();
+        Node current = head;
+        Node prev = null;
+        while (current != null) {
+            if (seen.contains(current.value)) {
+                prev.next = current.next;
+                length--;
+            } else {
+                seen.add(current.value);
+                prev = current; //prev trỏ đến node hiện tại
+            }
+            current = current.next; //và current trỏ đến node tiếp theo
+        }
 
+    }
 }
