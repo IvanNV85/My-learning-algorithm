@@ -100,4 +100,23 @@ public class DoubleLinkedList {
         length--;
         return temp;
     }
+
+    public Node get(int index) {
+        if (index < 0 || index >= length) return null;
+        Node temp = head;
+        if (index < length / 2) {
+            for (int i = 0; i < index; i++) {
+                temp = temp.next;
+            }
+        } else {
+            temp = tail;
+            //length = 4 thì chạy từ 3
+            for (int i = length - 1; i > index; i--) { //chạy ngược lại list
+                temp = temp.prev;
+            }
+        }
+        return temp;
+    }
+
+
 }
