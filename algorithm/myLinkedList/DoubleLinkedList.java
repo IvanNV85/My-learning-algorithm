@@ -127,4 +127,28 @@ public class DoubleLinkedList {
         return false;
     }
 
+    public boolean insert(int value, int index){
+        Node insertNode = new Node(value);
+        if (index < 0 || index > length) return false; //không the insert 1 node vào vị trí lớn hơn length của list
+        if (index == 0){
+            prepend(value);
+            return true;
+        }
+        if (index == length){
+            append(value);
+            return true;
+        }
+        Node before = get(index - 1);
+        Node after = before.next;
+
+        insertNode.next = after;
+        insertNode.prev = before;
+        before.next = insertNode;
+        after.prev = insertNode;
+
+        length++;
+        return true;
+    }
+
+
 }
