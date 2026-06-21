@@ -73,7 +73,7 @@ public class DoubleLinkedList {
         return temp;
     }
 
-    public void prepend(int value){
+    public void prepend(int value) {
         Node newNode = new Node(value);
         if (length == 0) {
             head = newNode;
@@ -86,7 +86,7 @@ public class DoubleLinkedList {
         length++;
     }
 
-    public Node removeFirst(){
+    public Node removeFirst() {
         if (length == 0) return null;
         Node temp = head;
         if (length == 1) {
@@ -155,8 +155,8 @@ public class DoubleLinkedList {
         if (index == 0) return removeFirst();
         if (index == length - 1) return removeLast();
         Node temp = get(index);
-        temp.next.prev = temp.next;
-        temp.prev.next = temp.prev;
+        temp.next.prev = temp.prev;
+        temp.prev.next = temp.next;
         length--;
         return temp;
     }
