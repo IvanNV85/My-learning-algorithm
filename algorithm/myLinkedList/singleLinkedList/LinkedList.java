@@ -1,4 +1,4 @@
-package algorithm.myLinkedList;
+package algorithm.myLinkedList.singleLinkedList;
 
 import java.util.HashSet;
 import java.util.Set;

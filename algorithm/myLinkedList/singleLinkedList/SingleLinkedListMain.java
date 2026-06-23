@@ -1,4 +1,4 @@
-package algorithm.myLinkedList;
+package algorithm.myLinkedList.singleLinkedList;
 
 public class SingleLinkedListMain {
     public static void main(String[] args) {
@@ -34,7 +34,7 @@ public class SingleLinkedListMain {
 //        System.out.print("\n" + "The number in the middle is: " + myLinkedList.findMiddleNode().value);
 
 //        System.out.print("\n" + "Has loop?: " + myLinkedList.hasLoop());
-        myLinkedList.removeDuplicate();
+        myLinkedList.removeDuplicateWithHashSet();
         System.out.print("\n" + "List after remove duplicate: ");
         myLinkedList.printList();
 

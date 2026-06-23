@@ -1,6 +1,4 @@
-package algorithm.myLinkedList;
-
-import org.w3c.dom.Node;
+package algorithm.myLinkedList.doubleLinkedList;
 
 public class DoubleLinkedList {
     private Node head;
@@ -155,8 +153,14 @@ public class DoubleLinkedList {
         if (index == 0) return removeFirst();
         if (index == length - 1) return removeLast();
         Node temp = get(index);
-        temp.next.prev = temp.prev;
-        temp.prev.next = temp.next;
+        Node before = temp.prev;
+        Node after = temp.next;
+        before.next = temp.next;
+        after.prev = temp.prev;
+        temp.next = null;
+        temp.prev = null;
+//        temp.next.prev = temp.prev;
+//        temp.prev.next = temp.next;
         length--;
         return temp;
     }
