@@ -14,7 +14,8 @@ public class Queue {
             this.value = value;
         }
     }
-    public Queue(int value){
+
+    public Queue(int value) {
         Node newNode = new Node(value);
         first = newNode;
         last = newNode;
@@ -33,10 +34,10 @@ public class Queue {
         System.out.println("Length: " + length);
     }
 
-    public void printQueue(){
+    public void printQueue() {
         Node temp = first;
         System.out.println("Queue: ");
-        while (temp != null){
+        while (temp != null) {
             System.out.println(temp.value);
             temp = temp.next;
         }
