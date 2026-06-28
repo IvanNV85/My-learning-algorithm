@@ -116,23 +116,23 @@ public class DoubleLinkedList {
         return temp;
     }
 
-    public boolean set (int value, int index){
+    public boolean set(int value, int index) {
         Node temp = get(index);
-        if (temp != null){
+        if (temp != null) {
             temp.value = value;
             return true;
         }
         return false;
     }
 
-    public boolean insert(int value, int index){
+    public boolean insert(int value, int index) {
         Node insertNode = new Node(value);
         if (index < 0 || index > length) return false; //không the insert 1 node vào vị trí lớn hơn length của list
-        if (index == 0){
+        if (index == 0) {
             prepend(value);
             return true;
         }
-        if (index == length){
+        if (index == length) {
             append(value);
             return true;
         }
@@ -148,7 +148,7 @@ public class DoubleLinkedList {
         return true;
     }
 
-    public Node remove(int index){
+    public Node remove(int index) {
         if (index < 0 || index >= length) return null;
         if (index == 0) return removeFirst();
         if (index == length - 1) return removeLast();
@@ -166,10 +166,11 @@ public class DoubleLinkedList {
     }
 
     public boolean isPalindrome() {
-        if (length == 0) return false;
+        if (length == 0) return true;
         Node forward = head;
         Node backward = tail;
-        while (forward.value != backward.value) {
+        while (forward != backward && backward.prev != forward) {
+            if (forward.value != backward.value) return false;
             backward = backward.prev;
             forward = forward.next;
         }
