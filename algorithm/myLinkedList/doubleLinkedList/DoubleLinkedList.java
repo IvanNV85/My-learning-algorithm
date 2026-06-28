@@ -165,4 +165,14 @@ public class DoubleLinkedList {
         return temp;
     }
 
+    public boolean isPalindrome() {
+        if (length == 0) return false;
+        Node forward = head;
+        Node backward = tail;
+        while (forward.value != backward.value) {
+            backward = backward.prev;
+            forward = forward.next;
+        }
+        return true;
+    }
 }
