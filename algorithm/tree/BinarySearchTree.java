@@ -39,4 +39,23 @@ public class BinarySearchTree {
         }
     }
 
+    public boolean containts(int value){
+        if (root == null) return false;
+        Node temp = root;
+        while (temp != null){
+            if (value < temp.value){
+                temp = temp.left;
+                return true;
+            } else if (value > temp.value) {
+                temp = temp.right;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
+
+
+
 }
