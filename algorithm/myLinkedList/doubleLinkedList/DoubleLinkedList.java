@@ -176,4 +176,21 @@ public class DoubleLinkedList {
         }
         return true;
     }
+
+    public void reverse() {
+        Node current = head;
+        while (current != null) {
+            Node temp = current.prev;
+
+            //hoan doi 2 mui ten cua node
+            current.prev = current.next;
+            current.next = temp;
+
+            //di chuyen den node tiep theo
+            current = current.prev;
+        }
+        Node tempHead = head;
+        head = tail;
+        tail = tempHead;
+    }
 }
