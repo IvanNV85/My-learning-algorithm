@@ -169,7 +169,7 @@ public class DoubleLinkedList {
         if (length == 0) return true;
         Node forward = head;
         Node backward = tail;
-        while (forward != backward && backward.prev != forward) {
+        while (forward != backward && forward.prev != backward) {
             if (forward.value != backward.value) return false;
             backward = backward.prev;
             forward = forward.next;
