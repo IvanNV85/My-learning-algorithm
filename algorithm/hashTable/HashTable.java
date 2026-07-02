@@ -102,5 +102,28 @@ public class HashTable {
         return total;
     }
 
+    public int buildLongestPalindrome(String s){
+        Map<Character, Integer> frequency = new HashMap<>();
+        int length = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char stringChar = s.charAt(i);
+            if (frequency.containsKey(stringChar)){
+                frequency.put(stringChar, frequency.get(stringChar) + 1);
+            } else {
+                frequency.put(stringChar, 1);
+            }
+        }
+        boolean hasOdd = false;
+        for (int count : frequency.values()){
+            if (count % 2 == 0){
+                length += count;
+            } else {
+                length += count - 1 ;
+                hasOdd = true;
+            }
+        }
+        if (hasOdd) length += 1;
+        return length;
+    }
 
 }
