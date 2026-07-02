@@ -75,4 +75,32 @@ public class HashTable {
         return allKeys;
     }
 
+    public int romanToInteger(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
+        int total = 0;
+        //xu li phần cộng các số
+        for (int i = 0; i < s.length() - 1; i++) {
+            int current = map.get(s.charAt(i));
+            int next = map.get(s.charAt(i + 1));
+
+            if (current < next) {
+                total -= current;
+            } else {
+                total += current;
+            }
+        }
+        //xử lí trường hợp thừa so cuối VD như số XIII
+        int lastChar = map.get(s.charAt(s.length() - 1));
+        total += lastChar;
+        return total;
+    }
+
+
 }
