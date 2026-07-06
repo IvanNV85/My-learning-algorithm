@@ -1,7 +1,7 @@
 package algorithm.tree;
 
 public class BinarySearchTree {
-    private Node root;
+    Node root;
 
     static class Node {
         int value;
@@ -28,7 +28,6 @@ public class BinarySearchTree {
                     return true;
                 }
                 temp = temp.left;
-                temp.left = newNode;
             } else {
                 if (temp.right == null){
                     temp.right = newNode;
@@ -54,7 +53,6 @@ public class BinarySearchTree {
         }
         return false;
     }
-
 
 
 

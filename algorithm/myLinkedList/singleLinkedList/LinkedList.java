@@ -237,6 +237,5 @@ public class LinkedList {
             }
             current = current.next; //và current trỏ đến node tiếp theo
         }
-
     }
 }
