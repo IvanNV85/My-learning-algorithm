@@ -32,4 +32,15 @@ public class Heap {
         heap.set(index2, temp);
     }
 
+    public void insert(int value) {
+        heap.add(value);
+        int current = heap.size() - 1;
+
+        //loop den khi node moi khi so sanh voi parent thi nho hon hoac len den dinh
+        while (current > 0 && heap.get(current) > heap.get(parent(current))) {
+            swap(current, parent(current)); // swap current voi node parent cua no
+            current = parent(current); //cap nhat current cua node moi
+        }
+    }
+
 }
