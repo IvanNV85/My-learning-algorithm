@@ -43,4 +43,12 @@ public class Heap {
         }
     }
 
+    public Integer remove() {
+        if (heap.isEmpty()) return null;
+        if (heap.size() == 1) return heap.removeFirst();
+
+        int maxHeap = heap.getFirst();
+        heap.set(0, heap.removeLast());  //last = size() - 1
+        return maxHeap;
+    }
 }
