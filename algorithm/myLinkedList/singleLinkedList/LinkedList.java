@@ -238,4 +238,15 @@ public class LinkedList {
             current = current.next; //và current trỏ đến node tiếp theo
         }
     }
+
+    public int binaryToDecimal(){
+        int decimal = 0;
+        Node current = head;
+        while (current != null){
+            decimal = decimal * 2 + current.value;
+            current = current.next;
+        }
+        return decimal;
+    }
+
 }
