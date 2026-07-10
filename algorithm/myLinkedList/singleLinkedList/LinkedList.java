@@ -249,4 +249,30 @@ public class LinkedList {
         return decimal;
     }
 
+    public void partitionList(int x){
+        Node dummyLess = new Node(0);
+        Node dummyGreater = new Node(0);
+        Node lessThan = dummyLess;
+        Node greaterThan = dummyGreater;
+
+        Node current = head;
+        while (current != null){
+            if (current.value < x){
+                lessThan.next = current;
+                lessThan = current;
+            } else {
+                greaterThan.next = current;
+                greaterThan = current;
+            }
+            current = current.next;
+        }
+
+        lessThan.next = dummyGreater.next;  //nối node cuối của list < x với đầu list > x
+        greaterThan.next = null;            //cắt đuôi cua list greater
+        head = dummyLess.next;              //cập nhật head là đầu của list < x;
+
+    }
+
+
+
 }
