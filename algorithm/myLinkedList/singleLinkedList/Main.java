@@ -1,15 +1,14 @@
 package algorithm.myLinkedList.singleLinkedList;
 
-public class SingleLinkedListMain {
+public class Main {
     public static void main(String[] args) {
         LinkedList myLinkedList = new LinkedList(1);
 
         //before removes
         myLinkedList.append(2);
-        myLinkedList.append(4);
-        myLinkedList.append(4);
         myLinkedList.append(3);
         myLinkedList.append(4);
+        myLinkedList.append(5);
 //        myLinkedList.prepend(3);
 //        myLinkedList.removeFirst();
 //        myLinkedList.set(3, 55);
@@ -34,13 +33,23 @@ public class SingleLinkedListMain {
 //        System.out.print("\n" + "The number in the middle is: " + myLinkedList.findMiddleNode().value);
 
 //        System.out.print("\n" + "Has loop?: " + myLinkedList.hasLoop());
-        myLinkedList.removeDuplicateWithHashSet();
-        System.out.print("\n" + "List after remove duplicate: ");
-        myLinkedList.printList();
+//        myLinkedList.removeDuplicateWithHashSet();
+//        System.out.print("\n" + "List after remove duplicate: ");
+//        myLinkedList.printList();
 
 
 //        myLinkedList.createCycle(2);
-//        System.out.print("\n" + "Has loop?: " + myLinkedList.hasLoop());
+        System.out.print("\n" + "Binary to Decimal: " + myLinkedList.binaryToDecimal());
+
+        myLinkedList.partitionList(3);
+        System.out.print("\nPartition list: ");
+        myLinkedList.printList();
+
+        myLinkedList.reverseBetween(1, 3);
+        System.out.print("\nReverse between list: ");
+        myLinkedList.printList();
+
+
 
     }
 }
