@@ -290,6 +290,24 @@ public class LinkedList {
         head = dummy.next;
     }
 
+    public void swapPairs() {
+        Node dummy = new Node(0);
+        dummy.next = head;
+        Node prev = dummy;
+        while (prev.next != null && prev.next.next != null) {
+            Node first = prev.next;
+            Node second = prev.next.next;
+
+            //swap 2 node pairs
+            first.next = second.next;
+            second.next = prev.next;
+            prev.next = second;
+
+            //continue to the next pair
+            prev = first;
+        }
+        head = dummy.next;
+    }
 
 
 }
