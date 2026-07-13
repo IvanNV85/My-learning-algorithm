@@ -193,4 +193,31 @@ public class DoubleLinkedList {
         head = tail;
         tail = tempHead;
     }
+
+    public void partitionList(int x) {
+        Node dummyLess = new Node(0);
+        Node dummyGreater = new Node(0);
+        Node less = dummyLess;
+        Node greater = dummyGreater;
+
+        Node current = head;
+        while (current != head) {
+            if (current.value < x) {
+                less.next = current;
+                current.prev = less;
+                less = current;
+            } else {
+                greater.next = current;
+                current.prev = greater;
+                greater = current;
+            }
+
+        }
+
+        less.next = dummyGreater.next;
+        dummyGreater.prev = less.next;
+        head = dummyLess.next;
+    }
+
+
 }
