@@ -201,22 +201,38 @@ public class DoubleLinkedList {
         Node greater = dummyGreater;
 
         Node current = head;
-        while (current != head) {
+        while (current != null) {
+            Node next = current.next;
+
             if (current.value < x) {
+                // Xóa current khỏi danh sách gốc
+                if (current.prev != null) current.prev.next = current.next;
+
+                if (current.next != null) current.next.prev = current.prev;
+
                 less.next = current;
                 current.prev = less;
+                current.next = null;
                 less = current;
             } else {
                 greater.next = current;
                 current.prev = greater;
+                current.next = null;
                 greater = current;
             }
-
+            current = current.next;
         }
 
+        //ghép 2 partition list
         less.next = dummyGreater.next;
         dummyGreater.prev = less.next;
+
+        //cập nhật head
         head = dummyLess.next;
+        // ⑥ Cleanup: Cập nhật prev của head
+        if (head != null) {
+            head.prev = null;
+        }
     }
 
 
