@@ -57,6 +57,25 @@ public class Stack {
 
         return temp;
     }
+    public String reverseString(String str){
+        if (str.isEmpty()) return str;
+
+        // Khởi tạo stack với ký tự đầu tiên
+        Stack stack = new Stack((int) str.charAt(0));
+
+        // Push các ký tự còn lại
+        for (int i = 1; i < str.length(); i++) {
+            stack.push((int) str.charAt(i));
+        }
+
+        // Pop lần lượt để lấy chuỗi đảo ngược
+        StringBuilder reversed = new StringBuilder();
+        while (!stack.isEmpty()) {
+            Node node = stack.pop();
+            reversed.append((char) node.value);
+        }
+
+        return reversed.toString();
 
     }
 
