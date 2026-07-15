@@ -58,5 +58,10 @@ public class Stack {
         return temp;
     }
 
+    }
+
+    public boolean isEmpty(){
+        return height == 0;
+    }
 
 }
