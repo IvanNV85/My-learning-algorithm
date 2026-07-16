@@ -8,7 +8,6 @@ public class Main {
         myLinkedList.append(2);
         myLinkedList.append(3);
         myLinkedList.append(4);
-        myLinkedList.append(5);
 //        myLinkedList.prepend(3);
 //        myLinkedList.removeFirst();
 //        myLinkedList.set(3, 55);
@@ -45,8 +44,12 @@ public class Main {
         System.out.print("\nPartition list: ");
         myLinkedList.printList();
 
-        myLinkedList.reverseBetween(1, 3);
-        System.out.print("\nReverse between list: ");
+//        myLinkedList.reverseBetween(1, 3);
+//        System.out.print("\nReverse between list: ");
+//        myLinkedList.printList();
+
+        myLinkedList.swapPairs();
+        System.out.print("\nList after swap pairs: ");
         myLinkedList.printList();
 
 

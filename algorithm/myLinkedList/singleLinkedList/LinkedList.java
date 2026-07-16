@@ -239,25 +239,25 @@ public class LinkedList {
         }
     }
 
-    public int binaryToDecimal(){
+    public int binaryToDecimal() {
         int decimal = 0;
         Node current = head;
-        while (current != null){
+        while (current != null) {
             decimal = decimal * 2 + current.value;
             current = current.next;
         }
         return decimal;
     }
 
-    public void partitionList(int x){
+    public void partitionList(int x) {
         Node dummyLess = new Node(0);
         Node dummyGreater = new Node(0);
         Node lessThan = dummyLess;
         Node greaterThan = dummyGreater;
 
         Node current = head;
-        while (current != null){
-            if (current.value < x){
+        while (current != null) {
+            if (current.value < x) {
                 lessThan.next = current;
                 lessThan = current;
             } else {
@@ -273,7 +273,7 @@ public class LinkedList {
 
     }
 
-    public void reverseBetween(int m, int n){
+    public void reverseBetween(int m, int n) {
         Node dummy = new Node(0);
         dummy.next = head;
         Node prev = dummy;
