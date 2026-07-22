@@ -1,8 +1,6 @@
 package algorithm.hashTable;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class HashTable {
     private int size = 7;
@@ -107,23 +105,23 @@ public class HashTable {
         return total;
     }
 
-    public int buildLongestPalindrome(String s){
+    public int buildLongestPalindrome(String s) {
         Map<Character, Integer> frequency = new HashMap<>();
         int length = 0;
         for (int i = 0; i < s.length(); i++) {
             char stringChar = s.charAt(i);
-            if (frequency.containsKey(stringChar)){
+            if (frequency.containsKey(stringChar)) {
                 frequency.put(stringChar, frequency.get(stringChar) + 1);
             } else {
                 frequency.put(stringChar, 1);
             }
         }
         boolean hasOdd = false;
-        for (int count : frequency.values()){
-            if (count % 2 == 0){
+        for (int count : frequency.values()) {
+            if (count % 2 == 0) {
                 length += count;
             } else {
-                length += count - 1 ;
+                length += count - 1;
                 hasOdd = true;
             }
         }
@@ -131,18 +129,15 @@ public class HashTable {
         return length;
     }
 
-    public boolean itemInCommon(int[] arr1, int[] arr2){
-        Map<Integer, Integer> seen = new HashMap<>();
-
-        for (int i = 0; i < arr1.length; i++) {
-            seen.put(arr1[i], i);
+    public boolean itemInCommon(int[] arr1, int[] arr2) {
+        Set<Integer> seen = new HashSet<>();
+        for (int k : arr1) {
+            seen.add(k);
         }
-        for (int i = 0; i < arr2.length; i++) {
-            if (seen.containsKey(arr1[i])){
-
-            }
+        for (int j : arr2) {
+            if (seen.contains(j)) return true;
         }
-
+        return false;
     }
 
 }
