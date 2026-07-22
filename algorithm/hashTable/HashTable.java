@@ -131,4 +131,18 @@ public class HashTable {
         return length;
     }
 
+    public boolean itemInCommon(int[] arr1, int[] arr2){
+        Map<Integer, Integer> seen = new HashMap<>();
+
+        for (int i = 0; i < arr1.length; i++) {
+            seen.put(arr1[i], i);
+        }
+        for (int i = 0; i < arr2.length; i++) {
+            if (seen.containsKey(arr1[i])){
+
+            }
+        }
+
+    }
+
 }
