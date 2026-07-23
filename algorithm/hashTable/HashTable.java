@@ -140,4 +140,24 @@ public class HashTable {
         return false;
     }
 
+    public List<Integer> finDuplicate(int[] array){
+        HashMap<Integer, Integer> seen = new HashMap<>();
+
+        for (int j : array) {
+            if (seen.containsKey(j)) {
+                seen.put(j, seen.get(j) + 1);
+            } else {
+                seen.put(j, 1);
+            }
+        }
+
+        List<Integer> result = new ArrayList<>();
+        for (Integer key : seen.keySet()){
+            if(key >= 2){
+                result.add(key);
+            }
+        }
+        return result;
+    }
+
 }
