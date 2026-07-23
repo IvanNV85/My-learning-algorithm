@@ -1,6 +1,9 @@
 package algorithm.hashTable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class HashTable {
     private int size = 7;
@@ -130,12 +133,13 @@ public class HashTable {
     }
 
     public boolean itemInCommon(int[] arr1, int[] arr2) {
-        Set<Integer> seen = new HashSet<>();
-        for (int k : arr1) {
-            seen.add(k);
+        Map<Integer, Boolean> seen = new HashMap<>();
+
+        for (int i = 0; i < arr1.length; i++) {
+            seen.put(arr1[i], true);
         }
-        for (int j : arr2) {
-            if (seen.contains(j)) return true;
+        for (int i = 0; i < arr2.length; i++) {
+            if (seen.containsKey(arr2[i])) return true;
         }
         return false;
     }
