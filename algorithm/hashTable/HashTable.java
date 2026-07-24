@@ -180,4 +180,28 @@ public class HashTable {
         }
         return null;
     }
+
+    public List<List<String>> groupAnagrams(String[] str){
+        HashMap<String, List<String>> map = new HashMap<>();
+        List<String> result = new ArrayList<>();
+        for (String s : str){
+            //phan 1: sort cac phan tu trong mang de thanh key vao hashmap
+            char[] chars = s.toCharArray();
+            Arrays.sort(chars);
+            String key = new String(chars);
+
+            //phan 2: kiem tra key trong map
+            if (map.containsKey(key)){
+                map.get(s);
+            } else {
+                
+            }
+
+        }
+
+
+    }
+
+
+
 }
