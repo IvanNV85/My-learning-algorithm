@@ -1,9 +1,7 @@
 package algorithm.hashTable;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class HashTable {
     private int size = 7;
@@ -144,7 +142,7 @@ public class HashTable {
         return false;
     }
 
-    public List<Integer> finDuplicate(int[] array){
+    public List<Integer> findDuplicates(int[] array) {
         HashMap<Integer, Integer> seen = new HashMap<>();
 
         for (int j : array) {
@@ -156,8 +154,8 @@ public class HashTable {
         }
 
         List<Integer> result = new ArrayList<>();
-        for (Integer key : seen.keySet()){
-            if(key >= 2){
+        for (Integer key : seen.keySet()) {
+            if (seen.get(key) >= 2) {
                 result.add(key);
             }
         }
@@ -181,27 +179,27 @@ public class HashTable {
         return null;
     }
 
-    public List<List<String>> groupAnagrams(String[] str){
+    public List<List<String>> groupAnagrams(String[] str) {
         HashMap<String, List<String>> map = new HashMap<>();
-        List<String> result = new ArrayList<>();
-        for (String s : str){
+        for (String string : str) {
             //phan 1: sort cac phan tu trong mang de thanh key vao hashmap
-            char[] chars = s.toCharArray();
+            char[] chars = string.toCharArray();
             Arrays.sort(chars);
             String key = new String(chars);
 
             //phan 2: kiem tra key trong map
-            if (map.containsKey(key)){
-                map.get(s);
+            if (map.containsKey(key)) {
+
+                List<String> existingList = map.get(key); //lay list hien tai va add string moi vao
+                existingList.add(string);
             } else {
-                
+
+                List<String> newList = new ArrayList<>(); //tao list moi va add string sau do them vao hashmap
+                newList.add(string);
+                map.put(key, newList);
             }
-
         }
-
-
+        //phan 3: tra ve ket qua
+        return new ArrayList<>(map.values());
     }
-
-
-
 }
