@@ -164,4 +164,20 @@ public class HashTable {
         return result;
     }
 
+    public Character firstNonRepeatingChar(String str) {
+        HashMap<Character, Integer> seen = new HashMap<>();
+        for (int i = 0; i < str.length(); i++) {
+            if (!seen.containsKey(str.charAt(i))) {
+                seen.put(str.charAt(i), 1);
+            } else {
+                seen.put(str.charAt(i), seen.get(str.charAt(i)) + 1);
+            }
+        }
+
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (seen.get(c) == 1) return c;
+        }
+        return null;
+    }
 }
