@@ -320,8 +320,11 @@ public class LinkedList {
                 innerCurrent = innerCurrent.next;
             }
             if (smallest != current){
-                    int temp = 
+                int temp = current.value;
+                current.value = smallest.value;
+                smallest.value = temp;
             }
+            current = current.next;
         }
 
 
