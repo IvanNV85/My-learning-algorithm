@@ -1,10 +1,11 @@
 package algorithm.Array;
+
 import java.util.Arrays;
 
 public class RemoveElement {
     public static void main(String[] args) {
-        int[] numberArrays = { 0, 1, 2, 2, 3, 0, 4, 2 };
-        int valueNeedToRemove = 2;
+        int[] numberArrays = {3, 2, 2, 3};
+        int valueNeedToRemove = 3;
         System.out.println("the first array: " + Arrays.toString(numberArrays));
         System.out.println("value Need To Remove: " + valueNeedToRemove);
 
@@ -20,19 +21,15 @@ public class RemoveElement {
         System.out.println("]");
     }
 
-    
 
-    public static int removeElement(int[] nums, int val) {
-
-        int k = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != val) {
-                nums[k] = nums[i];
-                k++;
+    public static int removeElement(int[] numbs, int removeValue) {
+        int newLength = 0;
+        for (int i = 0; i < numbs.length; i++) {
+            if (numbs[i] != removeValue) {
+                numbs[newLength] = numbs[i];
+                newLength++;
             }
         }
-        return k;
-
+        return newLength;
     }
-
 }
