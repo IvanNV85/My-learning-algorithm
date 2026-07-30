@@ -202,4 +202,23 @@ public class HashTable {
         //phan 3: tra ve ket qua
         return new ArrayList<>(map.values());
     }
+
+    public char findTheDifference(String s, String t) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            int count = 0;
+            if (!map.containsKey(s.charAt(i))) {
+                count++;
+                map.put(s.charAt(i), count);
+            } else {
+                int currentCount = map.get(s.charAt(i));
+                currentCount++;
+                map.put(s.charAt(i), currentCount);
+            }
+        }
+
+
+    }
+
+
 }
