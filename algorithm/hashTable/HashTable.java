@@ -220,5 +220,30 @@ public class HashTable {
 
     }
 
+    /*
+     *     Leetcode 387: Given a string s,
+     *     find the first non-repeating character in it and return its index.
+     *    If it does not exist, return -1.
+     */
+    public int firstUniqChar(String s) {
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        //duyet cac phan tu trong string vao cho vao hashmap
+        for (int i = 0; i < s.length(); i++) {
+            char frequency = s.charAt(i);
+            if (!map.containsKey(frequency)) {
+                map.put(frequency, 1);
+            } else {
+                map.put(frequency, map.get(frequency) + 1);
+            }
+        }
+
+        //lay phan tu khong trung lap dau tien
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (map.get(c) == 1) return i;
+        }
+        return -1;
+    }
 
 }
