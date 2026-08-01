@@ -217,7 +217,16 @@ public class HashTable {
             }
         }
 
-
+        //duyet string t, xem character nao bi thua thi return ra ngoai
+        for (int i = 0; i < t.length(); i++) {
+            char c = t.charAt(i);
+            if (map.containsKey(c) && map.get(c) > 0) {
+                map.put(c, map.get(c) - 1);
+            } else {
+                return c;
+            }
+        }
+        return ' ';
     }
 
     /*
