@@ -315,19 +315,17 @@ public class LinkedList {
         while (current.next != null) {
             Node smallest = current;
             Node innerCurrent = current.next;
-            while(innerCurrent != null){
+            while (innerCurrent != null) {
                 if (innerCurrent.value < smallest.value) smallest = innerCurrent;
                 innerCurrent = innerCurrent.next;
             }
-            if (smallest != current){
+            if (smallest != current) {
                 int temp = current.value;
                 current.value = smallest.value;
                 smallest.value = temp;
             }
             current = current.next;
         }
-
-
     }
 
 }

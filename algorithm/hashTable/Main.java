@@ -3,12 +3,12 @@ package algorithm.hashTable;
 public class Main {
     public static void main(String[] args) {
         HashTable myHashTable = new HashTable();
-        myHashTable.set("nails", 100);
-        myHashTable.set("tile", 50);
-        myHashTable.set("lumber", 80);
-
-        myHashTable.set("bolts", 200);
-        myHashTable.set("screws", 140);
+//        myHashTable.set("nails", 100);
+//        myHashTable.set("tile", 50);
+//        myHashTable.set("lumber", 80);
+//
+//        myHashTable.set("bolts", 200);
+//        myHashTable.set("screws", 140);
 
 
         myHashTable.printTable();
@@ -16,6 +16,7 @@ public class Main {
         System.out.println("List: " + myHashTable.getAllkeys());
 
 
+        System.out.println(myHashTable.firstNonRepeatingChar("hello"));
         System.out.println("Roman to Integer: " + myHashTable.romanToInteger("MCMXCIV"));
 
     }

@@ -205,6 +205,7 @@ public class HashTable {
 
     public char findTheDifference(String s, String t) {
         HashMap<Character, Integer> map = new HashMap<>();
+        //duyet string s, put vao trong hashmap
         for (int i = 0; i < s.length(); i++) {
             int count = 0;
             if (!map.containsKey(s.charAt(i))) {
