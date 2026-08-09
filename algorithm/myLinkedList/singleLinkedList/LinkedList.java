@@ -328,4 +328,19 @@ public class LinkedList {
         }
     }
 
+    public Node removeElements(Node head, int val) {
+        Node dummy = new Node(0);
+        Node prev = dummy;
+        Node current = dummy.next;
+        while (current != null) {
+            if (current.value == val) {
+                prev.next = current.next;
+            } else {
+                prev = current;
+            }
+            current = current.next;
+        }
+        return dummy.next;
+    }
+
 }
