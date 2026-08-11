@@ -343,4 +343,26 @@ public class LinkedList {
         return dummy.next;
     }
 
+    public boolean isPalindrome(Node head) {
+        List<Integer> values = new ArrayList<>();
+        Node current = head;
+
+        //luu cac current value vao trong list
+        while (current != null) {
+            values.add(current.value);
+            current = current.next;
+        }
+
+        //su dung two pointers de check
+        int left = 0;
+        int right = values.size() - 1;
+        while (left < right) {
+            if (!values.get(left).equals(values.get(right))) return false;
+            right--;
+            left++;
+        }
+        return true;
+    }
+
+
 }
