@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Intersection {
     public static void main(String[] args) {
-        // Test case 1: Output mong đợi [2,2]
+        // Test case 1: Output mong đợi [2]
         int[] nums1_1 = {1, 2, 2, 1};
         int[] nums2_1 = {2, 2};
         System.out.println("Test 1: " + Arrays.toString(intersect(nums1_1, nums2_1)));
@@ -22,26 +22,27 @@ public class Intersection {
     }
 
     public static int[] intersect(int[] nums1, int[] nums2) {
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashSet<Integer> set1 = new HashSet<>();
+        HashSet<Integer> set2 = new HashSet<>();
 
-// B1: đếm số lần xuất hiện của từng số trong nums1
-        for (int num : nums1) {
-            map.put(num, map.getOrDefault(num, 0) + 1);
+        //b1: luu cac value cua nums1 vao set
+        for (int j : nums1) {
+            set1.add(j);
         }
 
-// B2: duyệt nums2, nếu số đó còn "tồn dư" trong map thì lấy ra
-        List<Integer> resultList = new ArrayList<>();
-        for (int num : nums2) {
-            if (map.getOrDefault(num, 0) > 0) {
-                resultList.add(num);
-                map.put(num, map.get(num) - 1); // giảm số lượng còn lại
+        //neu co phan tu trung voi set 1 thi add vao set 2
+        for (int j : nums2) {
+            if (set1.contains(j)) {
+                set2.add(j);
             }
         }
 
-// B3: chuyển List sang mảng int[]
-        int[] result = new int[resultList.size()];
-        for (int i = 0; i < resultList.size(); i++) {
-            result[i] = resultList.get(i);
+        //chuyen thanh mang tra ve co size = set2
+        int[] result = new int[set2.size()];
+        int index = 0;
+        for (int num : set2) {
+            result[index] = num;
+            index++;
         }
 
         return result;
