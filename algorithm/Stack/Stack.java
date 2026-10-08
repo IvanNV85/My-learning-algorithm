@@ -1,5 +1,8 @@
 package algorithm.Stack;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class Stack {
     private Node top;
     private int height;
@@ -81,6 +84,25 @@ public class Stack {
 
     public boolean isEmpty(){
         return height == 0;
+    }
+
+    public boolean isValid(String s){
+        Deque<Character> stack = new ArrayDeque<>();
+
+        for (char c : s.toCharArray()) {
+            if (c == '(' || c == '{' || c == '[') {
+                stack.push(c);
+            } else {
+                if ((stack.isEmpty())) return false;
+
+                //luu ki tu mo ngoac hop le
+                char top = stack.pop();
+                if (c == ')' && top != '(') return false;
+                if (c == '}' && top != '{') return false;
+                if (c == ']' && top != '[') return false;
+            }
+        }
+        return stack.isEmpty();
     }
 
 }
